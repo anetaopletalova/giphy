@@ -1,17 +1,13 @@
 import {fireEvent} from '@testing-library/react'
 import React from 'react'
 import App from './App'
-import {useFetchGIFs} from './hooks/useFetchGIFs'
 import {renderWithClient} from './testUtils'
 
 jest.mock('./hooks/useFetchGIFs', () => ({
-  useFetchGIFs: jest.fn(),
+  useFetchGIFs: jest.fn().mockReturnValue({data: {}, limit: 20, offset: 0}),
 }))
 
 describe('Giphy App', () => {
-  beforeEach(() => {
-    ;(useFetchGIFs as any).mockImplementation(() => {})
-  })
   it('shows gif container on search', async () => {
     const rendered = renderWithClient(<App />)
 

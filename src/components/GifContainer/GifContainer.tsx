@@ -2,8 +2,13 @@ import {CircularProgress, Grid, TablePagination} from '@mui/material'
 import React, {ChangeEvent, useEffect, useState} from 'react'
 import {useURLQueryParams} from '../../hooks/useURLQueryParams'
 
+interface IGifData {
+  data: []
+  pagination: {total_count: number}
+}
+
 interface IGifContainerProps {
-  data: any
+  data: IGifData
   isLoading: boolean
   isError: boolean
 }

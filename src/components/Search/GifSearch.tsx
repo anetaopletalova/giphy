@@ -6,7 +6,7 @@ import './GifSearch.css'
 let delayTimeout: ReturnType<typeof setTimeout> | null
 
 const GifSearch: React.FC = () => {
-  const {setParams, q, limit} = useURLQueryParams()
+  const {setParams, q} = useURLQueryParams()
   const [input, setInput] = useState(q || '')
 
   const handleChange = (input: ChangeEvent<HTMLInputElement>) => {

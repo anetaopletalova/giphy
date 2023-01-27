@@ -16,6 +16,5 @@ export const getGIFS = async (q: string, limit: string, offset: string) => {
     throw new Error('Network response error')
   }
 
-  const json = await response.json()
-  return json
+  return response.json()
 }
