@@ -29,7 +29,6 @@ const GifSearch: React.FC = () => {
         onChange={handleChange}
         inputProps={{maxLength: 50}}
         style={{width: 350}}
-        data-testid="search"
       />
     </div>
   )

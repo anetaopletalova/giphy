@@ -44,11 +44,17 @@ const GifContainer: React.FC<IGifContainerProps> = ({
 
   return (
     <div>
-      {isError && <div>Request Failed</div>}
-      {isLoading && <CircularProgress />}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        {isError && <div>Request Failed</div>}
+        {isLoading && <CircularProgress />}
+      </div>
       {data && data.data?.length > 0 && (
         <div
-          data-testid="gif-container"
           style={{
             display: 'flex',
             flexDirection: 'column',
